@@ -49,6 +49,7 @@ dependencies = [
     "datasets>=4.4.2",
     "typer>=0.21.1",
     "ruff>=0.12.8",
+    "tinker-cookbook",
 ]
 
 [project.optional-dependencies]
@@ -73,6 +74,14 @@ name = "testpypi"
 url = "https://test.pypi.org/simple/"
 publish-url = "https://test.pypi.org/legacy/"
 explicit = true
+
+[tool.uv.workspace]
+members = [
+    "tinker_cookbook",
+]
+
+[tool.uv.sources]
+tinker-cookbook = { workspace = true, editable = true }
 
 [tool.black]
 line-length = 120
